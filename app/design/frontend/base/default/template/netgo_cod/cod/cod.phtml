@@ -1,0 +1,45 @@
+<?php
+/***************************************
+ *** Cash On Delivery ***
+ ***************************************
+ *
+ * @copyright   Copyright (c) 2015
+ * @company     NetAttingo Technologies
+ * @package     Netgo_Cod
+ * @author 		NetGo
+ * @dev			netattingomails@gmail.com
+ *
+ */
+ 
+$msgData = Mage::helper('netgo_cod')->getConfigData(); 
+if($msgData['zip_status'] == 1){
+?>
+<div class="input-box">
+	<div class="z-btn">
+		<label>Zip Code : </label><input type="text" id="cod" class="product-custom-option" name="cod" value="">
+		<button type="button" onclick="checkCOD();" name="zip-check" title="Check" class="button" id="zip-check"><span><span>Check</span></span></button>
+	</div>
+	<div id="cod_msg"></div>
+</div>
+
+<script>
+	function checkCOD(){
+		var cod = $('cod').value;
+		if(cod == ''){
+			$('cod_msg').update('<span class="cod-error"><?php echo $msgData['emp_msg']; ?></span>');
+			return
+		}else{
+			$('cod_msg').update('<img src="<?php echo Mage::getBaseUrl( Mage_Core_Model_Store::URL_TYPE_WEB, true ).'media/cod/img/ajax-loader-2.gif';?>">'); 
+			new Ajax.Request('<?php echo Mage::getBaseUrl().'netgo/cod/check';?>', {
+				method:'post',
+				parameters: {zipcode: cod}, 
+				onSuccess: function(transport) {
+					var response = transport.responseText || "no response text";
+					$('cod_msg').update(response);
+				},
+				onFailure: function() { alert('Something went wrong...'); }
+			});
+		}
+	}
+</script>
+<?php } ?>

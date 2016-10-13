@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!--
+/***************************************
+ *** Cash On Delivery ***
+ ***************************************
+ *
+ * @copyright   Copyright (c) 2015
+ * @company     NetAttingo Technologies
+ * @package     Netgo_Cod
+ * @author 		NetGo
+ * @dev			netattingomails@gmail.com
+ *
+ */
+-->
+<config>
+    <modules>
+        <Netgo_Cod>
+            <version>1.0.2</version>
+        </Netgo_Cod>
+    </modules>
+    <global>
+        <resources>
+            <netgo_cod_setup>
+                <setup>
+                    <module>Netgo_Cod</module>
+                    <class>Netgo_Cod_Model_Resource_Setup</class>
+                </setup>
+            </netgo_cod_setup>
+        </resources>
+        <blocks>
+            <netgo_cod>
+                <class>Netgo_Cod_Block</class>
+            </netgo_cod>
+        </blocks>
+        <helpers>
+            <netgo_cod>
+                <class>Netgo_Cod_Helper</class>
+            </netgo_cod>
+        </helpers>
+        <models>
+            <netgo_cod>
+                <class>Netgo_Cod_Model</class>
+                <resourceModel>netgo_cod_resource</resourceModel>
+            </netgo_cod>
+            <netgo_cod_resource>
+                <class>Netgo_Cod_Model_Resource</class>
+                <entities>
+                    <cod>
+                        <table>netgo_cod_cod</table>
+                    </cod>
+                </entities>
+            </netgo_cod_resource>
+        </models>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <netgo_cod>
+                    <file>netgo_cod.xml</file>
+                </netgo_cod>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Netgo_Cod>
+                    <files>
+                        <default>Netgo_Cod.csv</default>
+                    </files>
+                </Netgo_Cod>
+            </modules>
+        </translate>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Netgo_Cod before="Mage_Adminhtml">Netgo_Cod_Adminhtml</Netgo_Cod>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <netgo_cod>
+                <use>standard</use>
+                <args>
+                    <module>Netgo_Cod</module>
+                    <frontName>netgo</frontName>
+                </args>
+            </netgo_cod>
+        </routers>
+        <layout>
+            <updates>
+                <netgo_cod>
+                    <file>netgo_cod.xml</file>
+                </netgo_cod>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Netgo_Cod>
+                    <files>
+                        <default>Netgo_Cod.csv</default>
+                    </files>
+                </Netgo_Cod>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <netgo_cod>
+            <cod>
+                <breadcrumbs>1</breadcrumbs>
+            </cod>
+        </netgo_cod>
+    </default>
+</config>

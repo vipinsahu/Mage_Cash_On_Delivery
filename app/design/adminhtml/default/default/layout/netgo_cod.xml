@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/***************************************
+ *** Cash On Delivery ***
+ ***************************************
+ *
+ * @copyright   Copyright (c) 2015
+ * @company     NetAttingo Technologies
+ * @package     Netgo_Cod
+ * @author 		NetGo
+ * @dev			netattingomails@gmail.com
+ *
+ */
+--> 
+<layout>
+    <adminhtml_cod_cod_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>netgo_cod/cod</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="netgo_cod/adminhtml_cod" name="cod" />
+
+        </reference>
+    </adminhtml_cod_cod_index>
+    <adminhtml_cod_cod_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="netgo_cod/adminhtml_cod_grid" name="cod_grid"/>
+        </block>
+    </adminhtml_cod_cod_grid>
+    <!-- Cod add/edit action -->
+    <adminhtml_cod_cod_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>netgo_cod/cod</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="netgo_cod/adminhtml_cod_edit" name="cod_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="netgo_cod/adminhtml_cod_edit_tabs" name="cod_tabs"></block>
+        </reference>
+    </adminhtml_cod_cod_edit>
+
+</layout>

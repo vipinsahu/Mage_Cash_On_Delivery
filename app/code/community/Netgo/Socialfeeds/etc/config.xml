@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Netgo_Socialfeeds extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Netgo
+ * @package        Netgo_Socialfeeds
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Netgo_Socialfeeds>
+            <version>1.0.1</version>
+        </Netgo_Socialfeeds>
+    </modules>
+    <global>
+        <resources>
+            <netgo_socialfeeds_setup>
+                <setup>
+                    <module>Netgo_Socialfeeds</module>
+                    <class>Netgo_Socialfeeds_Model_Resource_Setup</class>
+                </setup>
+            </netgo_socialfeeds_setup>
+        </resources>
+        <blocks>
+            <netgo_socialfeeds>
+                <class>Netgo_Socialfeeds_Block</class>
+            </netgo_socialfeeds>
+        </blocks>
+        <helpers>
+            <netgo_socialfeeds>
+                <class>Netgo_Socialfeeds_Helper</class>
+            </netgo_socialfeeds>
+        </helpers>
+        <models>
+            <netgo_socialfeeds>
+                <class>Netgo_Socialfeeds_Model</class>
+                <resourceModel>netgo_socialfeeds_resource</resourceModel>
+            </netgo_socialfeeds>
+            <netgo_socialfeeds_resource>
+                <class>Netgo_Socialfeeds_Model_Resource</class>
+                <entities>
+                    <socialfeed>
+                        <table>netgo_socialfeeds_socialfeed</table>
+                    </socialfeed>
+                </entities>
+            </netgo_socialfeeds_resource>
+        </models>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <netgo_socialfeeds>
+                        <class>Netgo_Socialfeeds_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </netgo_socialfeeds>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <netgo_socialfeeds>
+                    <file>netgo_socialfeeds.xml</file>
+                </netgo_socialfeeds>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Netgo_Socialfeeds>
+                    <files>
+                        <default>Netgo_Socialfeeds.csv</default>
+                    </files>
+                </Netgo_Socialfeeds>
+            </modules>
+        </translate>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Netgo_Socialfeeds before="Mage_Adminhtml">Netgo_Socialfeeds_Adminhtml</Netgo_Socialfeeds>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <netgo_socialfeeds>
+                <use>standard</use>
+                <args>
+                    <module>Netgo_Socialfeeds</module>
+                    <frontName>netgo_social feeds</frontName>
+                </args>
+            </netgo_socialfeeds>
+        </routers>
+        <layout>
+            <updates>
+                <netgo_socialfeeds>
+                    <file>netgo_socialfeeds.xml</file>
+                </netgo_socialfeeds>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Netgo_Socialfeeds>
+                    <files>
+                        <default>Netgo_Socialfeeds.csv</default>
+                    </files>
+                </Netgo_Socialfeeds>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <netgo_socialfeeds>
+            <socialfeed>
+                <breadcrumbs>1</breadcrumbs>
+            </socialfeed>
+        </netgo_socialfeeds>
+    </default>
+</config>

@@ -1,0 +1,21 @@
+<?php
+/***************************************
+ *** Cash On Delivery ***
+ ***************************************
+ *
+ * @copyright   Copyright (c) 2015
+ * @company     NetAttingo Technologies
+ * @package     Netgo_Cod
+ * @author 		NetGo
+ * @dev			netattingomails@gmail.com
+ *
+ */
+?>
+<?php $_cod = $this->getCurrentCod();?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<div class="page-title cod-title">
+    <h1><?php echo $_cod->getZipcode(); ?></h1>
+</div>
+<div class="cod-view">
+
+</div>

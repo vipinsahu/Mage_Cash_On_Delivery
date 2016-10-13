@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!--
+/***************************************
+ *** Cash On Delivery ***
+ ***************************************
+ *
+ * @copyright   Copyright (c) 2015
+ * @company     NetAttingo Technologies
+ * @package     Netgo_Cod
+ * @author 		NetGo
+ * @dev			netattingomails@gmail.com
+ *
+ */
+--> 
+<config>
+    <tabs>
+        <netgo translate="label" module="netgo_cod">
+            <label>Netgo</label>
+            <sort_order>1</sort_order>
+        </netgo>
+    </tabs>
+    <sections>
+        <netgo_cod translate="label" module="netgo_cod">
+            <class>separator-top</class>
+            <label>Manage COD</label>
+            <tab>netgo</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <cod translate="label" module="netgo_cod">
+                    <label>COD Setting</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <zip_status translate="label">
+                            <label>Module status</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </zip_status>
+						<suc_msg translate="label">
+                            <label>Success message</label>
+                            <frontend_type>text</frontend_type> 
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </suc_msg>
+						<err_msg translate="label">
+                            <label>Failure message</label>
+                            <frontend_type>text</frontend_type> 
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </err_msg>
+						<emp_msg translate="label">
+                            <label>Empty message</label>
+                            <frontend_type>text</frontend_type> 
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </emp_msg>
+                    </fields>
+                </cod>
+            </groups>
+        </netgo_cod>
+    </sections>
+</config>

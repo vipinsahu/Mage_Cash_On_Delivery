@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+/***************************************
+ *** Cash On Delivery ***
+ ***************************************
+ *
+ * @copyright   Copyright (c) 2015
+ * @company     NetAttingo Technologies
+ * @package     Netgo_Cod
+ * @author 		NetGo
+ * @dev			netattingomails@gmail.com
+ *
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <netgo_cod translate="title" module="netgo_cod">
+                                        <title>Cod</title>
+                                    </netgo_cod>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <netgo_cod translate="title" module="netgo_cod">
+                        <title>Manage COD</title>
+                        <children>
+                            <cod translate="title" module="netgo_cod">
+                                <title>COD</title>
+                                <sort_order>0</sort_order>
+                            </cod>
+                        </children>
+                    </netgo_cod>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <netgo_cod translate="title" module="netgo_cod">
+            <title>Manage COD</title>
+            <sort_order>85</sort_order>
+            <children>
+                <cod translate="title" module="netgo_cod">
+                    <title>COD</title>
+                    <action>adminhtml/cod_cod</action>
+                    <sort_order>0</sort_order>
+                </cod>
+            </children>
+        </netgo_cod>
+    </menu>
+</config>

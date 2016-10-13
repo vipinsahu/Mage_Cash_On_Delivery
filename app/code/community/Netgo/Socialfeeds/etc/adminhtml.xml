@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Netgo_Socialfeeds extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Netgo
+ * @package        Netgo_Socialfeeds
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <netgo_socialfeeds translate="title" module="netgo_socialfeeds">
+                                        <title>Socialfeeds</title>
+                                    </netgo_socialfeeds>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <netgo_socialfeeds translate="title" module="netgo_socialfeeds">
+                        <title>Social Feeds</title>
+                        <children>
+                            <socialfeed translate="title" module="netgo_socialfeeds">
+                                <title>Socialfeed</title>
+                                <sort_order>0</sort_order>
+                            </socialfeed>
+                        </children>
+                    </netgo_socialfeeds>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <netgo_socialfeeds translate="title" module="netgo_socialfeeds">
+            <title>Social Feeds</title>
+            <sort_order>37</sort_order>
+            <children>
+                <socialfeed translate="title" module="netgo_socialfeeds">
+                    <title>Socialfeed</title>
+                    <action>adminhtml/socialfeeds_socialfeed</action>
+                    <sort_order>0</sort_order>
+                </socialfeed>
+            </children>
+        </netgo_socialfeeds>
+    </menu>
+</config>
